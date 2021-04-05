@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{basics.name}} &nbsp; Resume</title>
+        <link rel="stylesheet" href="resume.css">
+    </head>
+    <body>
+<!--basics-->
+        {{#basics}}
+        <div class="resume-basics-class">
+            <h1>{{name}}</h1>
+            <p>{{summary}}</p>
+            <br>
+            {{#location}}
+            <div class="resume-basics-location-class">
+                <p>{{address}},&nbsp;{{city}},&nbsp;{{region}}&nbsp;&nbsp;{{postalCode}}</p>
+            </div>
+            {{/location}}
+            <div class="resume-basics-contact-class">
+                <p>Cell:&nbsp;{{phone}}</p>
+                <p>Email:&nbsp;<a href="mailto:{{email}}">{{email}}</a>
+            </div>
+            <br>
+        </div>
+        {{/basics}}
+        
+<!--projects-->
+        <div class="resume-projects-class">
+            <h2>Projects</h2>
+        {{#projects}}
+            {{#.}}
+            
+            <p>
+                {{#if endDate}}
+                <b class="resume-projects-title-class">
+                    <i>{{description}}&nbsp;({{startDate}}&nbsp;-&nbsp;{{endDate}})</i>
+                </b>
+                {{else}}
+                <b class="resume-projects-title-class">
+                    <i>{{description}}&nbsp;({{startDate}}&nbsp;-&nbsp;Current)</i>
+                </b>
+                {{/if}}
+            </p>
+
+            <p><a href="{{url}}">{{url}}</a></p>
+            
+            <div class="resume-projects-roles-class">
+                <p>
+                    <b>Roles:</b>
+                {{#roles}}
+                    {{.}} {{#if @last}}&nbsp;{{else}},{{/if}}
+                {{/roles}}
+                </p>
+            </div>
+
+            <div class="resume-projects-keywords-class">
+                <p>
+                    <b>Keywords:</b>
+                {{#keywords}}
+                    {{.}} {{#if @last}}&nbsp;{{else}},{{/if}}
+                {{/keywords}}
+                </p>
+            </div>
+
+            <div class="resume-projects-highlights-class">
+                <p>
+                    <b>Highlights:</b>
+                    <ul class="resume-projects-highlights-list-class">
+                        {{#highlights}}
+                        <li>{{.}}</li>
+                        {{/highlights}}
+                    </ul>
+                </p>
+            </div>
+            <br>
+            {{/.}}
+        {{/projects}}
+
+<!--work-->
+        <div class="resume-work-class">
+            <h2>Work Experience</h2>
+        {{#work}}
+            {{#.}}
+            <p>
+                {{#if endDate}}
+                <b class="resume-work-title-class">
+                    <i>{{name}}&nbsp;-&nbsp;{{location}};&nbsp;({{startDate}}&nbsp;-&nbsp;{{endDate}})</i>
+                </b>
+                {{else}}
+                <b class="resume-work-title-class">
+                    <i>{{name}}&nbsp;-&nbsp;{{location}};&nbsp;({{startDate}}&nbsp;-&nbsp;Current)</i>
+                </b>
+                {{/if}}
+            </p>
+
+            <p>{{position}}</p>
+
+            <div class="resume-work-highlights-class">
+                <p>
+                    <b>Highlights:</b>
+                    <ul class="resume-work-highlights-list-class">
+                        {{#highlights}}
+                        <li>{{.}}</li>
+                        {{/highlights}}
+                    </ul>
+                </p>
+            </div>
+            <br>
+            {{/.}}
+        {{/work}}
+        </div>
+
+<!--volunteer-->
+        <div class="resume-volunteer-class">
+            <h2>Volunteerism</h2>
+        {{#volunteer}}
+            {{#.}}
+            <p>
+                {{#if endDate}}
+                <b class="resume-volunteer-title-class">
+                    <i>{{organization}}&nbsp;-&nbsp;{{location}};&nbsp;({{startDate}}&nbsp;-&nbsp;{{endDate}})</i>
+                </b>
+                {{else}}
+                <b class="resume-volunteer-title-class">
+                    <i>{{organization}}&nbsp;-&nbsp;{{location}};&nbsp;({{startDate}}&nbsp;-&nbsp;Current)</i>
+                </b>
+                {{/if}}
+            </p>
+
+            <p>{{summary}}</p>
+
+            <div class="resume-volunteer-highlights-class">
+                <p>
+                    <b>Highlights:</b>
+                    <ul class="resume-volunteer-highlights-list-class">
+                        {{#highlights}}
+                        <li>{{.}}</li>
+                        {{/highlights}}
+                    </ul>
+                </p>
+            </div>
+            <br>
+            {{/.}}
+        {{/volunteer}}
+        </div>
+
+<!--skills-->
+        <div class="resume-skills-class">
+            <h2>Skills</h2>
+        {{#skills}}
+            {{#.}}
+            <p>
+                <b><i>{{name}},&nbsp;{{level}}</i></b>
+            </p>
+            <div class="resume-skills-keywords-class">
+                <p>
+                {{#keywords}}
+                    {{.}} {{#if @last}}&nbsp;{{else}},{{/if}}
+                {{/keywords}}
+                </p>
+            </div>
+            <br>
+            {{/.}}
+        {{/skills}}
+        </div>
+
+<!--education-->
+        <div class="resume-education-class">
+            <h2>Education</h2>
+        {{#education}}
+            {{#.}}
+            <p>
+                <b class="resume-education-title-class"><i>{{#courses}}{{.}}{{/courses}}</i></b>
+            </p>
+
+            <p>
+                {{#if endDate}}
+                <b>
+                    {{institution}}&nbsp;({{startDate}}&nbsp;-&nbsp;{{endDate}})
+                </b>
+                {{else}}
+                <b>
+                    {{institution}}&nbsp;({{startDate}}&nbsp;-&nbsp;Current)
+                </b>
+                {{/if}}
+            </p>
+
+            <p><a href="{{url}}">{{url}}</a></p>
+
+            <div class="resume-education-highlights-class">
+                <b>Highlights:</b>
+                <ul class="resume-education-highlights-list-class">
+                    {{#highlights}}
+                    <li>{{.}}</li>
+                    {{/highlights}}
+                </ul>
+            </div>
+            <br>
+            {{/.}}
+        {{/education}}
+        </div>
+        <br>
+    </body>
+</html>

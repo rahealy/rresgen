@@ -1,0 +1,9 @@
+{
+	"name": "json_resume_tool",
+	"version": "1.0.0",
+	"dependencies": {
+		"handlebars": "^4.7.7",
+		"resume-schema": "^1.0.0",
+		"yargs": "^16.2.0"
+	}
+}

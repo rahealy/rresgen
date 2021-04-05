@@ -1,0 +1,110 @@
+br { 
+    font-size: 25%; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.0;
+}
+
+p {
+  margin-top: .5em ;
+  margin-bottom: .5em ;
+}
+
+.resume-basics-class {
+    line-height: 1.0;
+}
+
+.resume-basics-location-class   {
+    line-height: 1.0;
+    font-weight: bold;
+}
+
+.resume-basics-contact-class {
+    line-height: 1.0;
+    font-weight: bold;
+}
+
+.resume-basics-profiles-class {
+    line-height: 1.0;
+}
+
+.resume-projects-class {
+    line-height: 1.0;
+}
+
+.resume-projects-title-class {
+    font-size: 110%;
+}
+
+.resume-projects-roles-class {
+    line-height: 1.0;
+}
+
+.resume-projects-keywords-class {
+    line-height: 1.0;
+}
+
+.resume-projects-highlights-class {
+    line-height: 1.0;
+}
+
+.resume-projects-highlights-list-class {
+    line-height: 1.1;
+}
+
+.resume-work-class {
+    line-height: 1.0;
+}
+
+.resume-work-title-class {
+    font-size: 110%;
+}
+
+.resume-work-highlights-class {
+    line-height: 1.0;
+}
+
+.resume-work-highlights-list-class {
+    line-height: 1.1;
+}
+
+.resume-volunteer-class {
+    line-height: 1.0;
+}
+
+.resume-volunteer-title-class {
+    font-size: 110%;
+}
+
+.resume-volunteer-highlights-class {
+    line-height: 1.0;
+}
+
+.resume-volunteer-highlights-list-class {
+    line-height: 1.1;
+}
+
+.resume-skills-class {
+    line-height: 1.0;
+}
+
+.resume-skills-keywords-class {
+    line-height: 1.0;
+}
+
+.resume-education-class {
+    line-height: 1.0;
+}
+
+.resume-education-title-class {
+    font-size: 110%;
+}
+
+.resume-education-highlights-class {
+    line-height: 1.0;
+}
+
+.resume-education-highlights-list-class {
+    line-height: 1.1;
+}
