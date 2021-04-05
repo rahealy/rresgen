@@ -1,0 +1,6 @@
+*
+!sample_resume.json
+!package.json
+!*.js
+!template_*.*
+!README.md
