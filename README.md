@@ -1,5 +1,5 @@
 # rresgen
-Richard's Resume Generator inputs a JSON file meeting the JSON resume specification, a handlebars template, a template CSS file, and outputs a resume rendered as HTML and CSS.
+Richard's Resume Generator inputs a JSON file meeting the JSON resume specification, a handlebars template file, a template CSS file, and outputs a resume rendered as HTML and CSS files.
 
 1) Clone into desired directory.
 3) Run `npm install` to install dependencies in current directory. 
