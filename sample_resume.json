@@ -1,0 +1,123 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+
+  "meta": {
+    "title": "Resume of John Doe"
+  },
+  "basics": {
+    "name": "John Doe",
+    "label": "Tag",
+    "image": "",
+    "email": "example@example.com",
+    "phone": "555-555-5555",
+    "url": "https://example.com/",
+    "summary": "Just another John Doe",
+    "location": {
+      "address": "123 Any St",
+      "city": "Beverly Hills",
+      "region": "CA",
+      "countryCode": "US",
+      "postalCode": "90210"
+    },
+    "profiles": [
+      {
+        "network": "Example",
+        "username": "johndoe",
+        "url": "https://example.com/johndoe"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "Doe Counter",
+      "description": "John Doe Counter",
+      "highlights": [
+        "Personal challenge to quickly develop a system to count people named John Doe",
+        "Project goals achieved in 10 days"
+      ],
+      "keywords": [
+        "Doe", "A", "Deer"
+      ],
+      "startDate": "2020-01",
+      "endDate": "2020-02",
+      "url": "https://example.com/johndoe/doecounter",
+      "roles": [
+        "Software Development"
+      ],
+      "entity": "Example Entity",
+      "type": "Programming"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Example Programming Languages",
+      "level": "Fluent",
+      "keywords": [
+        "BASIC", "PASCAL", "COBOL" 
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Example University",
+      "url": "https://example.com/college_u/",
+      "area": "Hoop Jumping",
+      "studyType": "Degree",
+      "startDate": "2020-09",
+      "endDate": "2021-03",
+      "score": "9000",
+      "courses": ["Remedial Hoop Jumping"],
+      "highlights": [
+        "Gave an example of jumpping through examples of administrative hoops with examples of panache and flair",
+        "Gave an example of winning an example award twice in an example semester" 
+      ]
+    }
+  ],
+  "work": [
+    {
+      "name": "Example Company",
+      "location": "Beverly Hills, CA",
+      "description": "Made an example",
+      "position": "Example Making Engineer",
+      "url": "https://example.com/example_company/",
+      "phone": "555-555-5555",
+      "email": "",
+      "startDate": "2019-10",
+      "endDate": "2020-06",
+      "summary": "Professional Example Corporation",
+      "highlights": [
+        "Provided examples of exampling",
+        "Increased exampling productivity by five percent"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Example Volunteer",
+      "location": "Beverly Hills, CA",
+      "position": "Volunteer Example",
+      "url": "",
+      "startDate": "2019-09",
+      "endDate": "2020-06",
+      "summary": "Volunteer to make sure there are no gaps in your resume",
+      "highlights": [
+        "Volunteered as an example to others"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
+  "references": [
+    {
+      "name": "John Doe",
+      "reference": "Example friend.",
+      "known": "100+ years",
+      "email": "jdoe29918@example.com",
+      "phone": "555-555-5555"
+    }
+  ]
+}
