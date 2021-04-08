@@ -59,14 +59,48 @@ var argv = yargs
     .argv;
 
 
+var documentOpts = {
+    orientation: "portrait",
+    margins: {
+        top: 1440,
+        right: 1800,
+        bottom: 1440,
+        left: 1800,
+        header: 720,
+        footer: 720,
+        gutter: 0
+    },
+    title: "",
+    subject: "",
+    creator: "",
+    keywords: [""],
+    description: "",
+    lastModifiedBy: "",
+    revision: 1,
+    createdAt: 0,
+    modifiedAt: 0,
+    headerType: "default", //<"default"|"first"|"even"> type of header.
+    header: false,
+    footerType: "default", //<"default"|"first"|"even"> type of footer.
+    footer: false,
+    font: "", //Defaults to Times New Roman.
+    fontSize: 22, //size of font in HIP(Half of point). Defaults to 22. Supports equivalent measure in pt.
+    complexScriptFontSize: 22, //size of complex script font in HIP(Half of point). Defaults to 22. Supports equivalent measure in pt.
+    table: {
+        row: {
+            cantSplit: false,
+        },
+        pageNumber: false,
+        skipFirstHeaderFooter: false
+    }
+};
 
 
 function generate() {
     var fs = require("fs");
     var resumeObject = JSON.parse(fs.readFileSync(argv.r, "utf8"));
-    var htmlStr;
 
-    var promise = new Promise( (resolve, reject) => {
+    var resumeSchemaPromise = new Promise( (resolve, reject) => {
         var resumeSchema = require("resume-schema");
         var onComplete = function (err, report) {
             if(err) {
@@ -80,7 +114,7 @@ function generate() {
         resumeSchema.validate(resumeObject, onComplete);
     });
 
-    promise.then(() => {
+    resumeSchemaPromise.then(() => {
         var templateFile = argv.t;
         var templateSrc  = fs.readFileSync(templateFile).toString();
         var handlebars   = require("handlebars");
@@ -95,47 +129,20 @@ function generate() {
         }
 
         if (argv.d) {
-            var HTMLtoDOCX = require('html-to-docx');
-            var documentOpts = {
-                orientation: "portrait",
-                margins: {
-                    top: 1440,
-                    right: 1800,
-                    bottom: 1440,
-                    left: 1800,
-                    header: 720,
-                    footer: 720,
-                    gutter: 0
-                },
-                title: "",
-                subject: "",
-                creator: "",
-                keywords: [""],
-                description: "",
-                lastModifiedBy: "",
-                revision: 1,
-                createdAt: 0,
-                modifiedAt: 0,
-                headerType: "default", //<"default"|"first"|"even"> type of header.
-                header: false,
-                footerType: "default", //<"default"|"first"|"even"> type of footer.
-                footer: false,
-                font: "", //Defaults to Times New Roman.
-                fontSize: 22, //size of font in HIP(Half of point). Defaults to 22. Supports equivalent measure in pt.
-                complexScriptFontSize: 22, //size of complex script font in HIP(Half of point). Defaults to 22. Supports equivalent measure in pt.
-                table: {
-                    row: {
-                        cantSplit: false,
-                    },
-                    pageNumber: false,
-                    skipFirstHeaderFooter: false
+            var juice = require('juice');  
+            var onComplete = function (err, html) {
+                if(err) {
+                    console.error("Inlining CSS failed: ", err);
+                } else {
+                    console.log(html);
+                    var HTMLtoDOCX = require('html-to-docx');
+                    HTMLtoDOCX(html, null, documentOpts).then((fileBuffer) => {
+                        fs.writeFileSync("resume.docx", fileBuffer);
+                        console.log("Wrote resume.docx.");
+                    });
                 }
-            };
-
-            HTMLtoDOCX(htmlStr, null, documentOpts).then((fileBuffer) => {
-                fs.writeFileSync("resume.docx", fileBuffer);
-                console.log("Wrote resume.docx.");
-            });
+            }
+            juice.juiceResources(htmlStr, null, onComplete);
         }
     });
 }
