@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>{{basics.name}} &nbsp; Resume</title>
+        <title>Resume of {{basics.name}}</title>
         <link rel="stylesheet" href="resume.css">
     </head>
     <body>
@@ -14,12 +14,12 @@
             <br>
             {{#location}}
             <div class="resume-basics-location-class">
-                <p>{{address}},&nbsp;{{city}},&nbsp;{{region}}&nbsp;&nbsp;{{postalCode}}</p>
+                <p>{{address}}, {{city}}, {{region}}  {{postalCode}}</p>
             </div>
             {{/location}}
             <div class="resume-basics-contact-class">
-                <p>Cell:&nbsp;{{phone}}</p>
-                <p>Email:&nbsp;<a href="mailto:{{email}}">{{email}}</a>
+                <p>Cell: {{phone}}</p>
+                <p>Email: <a href="mailto:{{email}}">{{email}}</a>
             </div>
             <br>
         </div>
@@ -34,11 +34,11 @@
             <p>
                 {{#if endDate}}
                 <b class="resume-projects-title-class">
-                    <i>{{description}}&nbsp;({{startDate}}&nbsp;-&nbsp;{{endDate}})</i>
+                    <i>{{description}} ({{startDate}} - {{endDate}})</i>
                 </b>
                 {{else}}
                 <b class="resume-projects-title-class">
-                    <i>{{description}}&nbsp;({{startDate}}&nbsp;-&nbsp;Current)</i>
+                    <i>{{description}} ({{startDate}} - Current)</i>
                 </b>
                 {{/if}}
             </p>
@@ -49,7 +49,7 @@
                 <p>
                     <b>Roles:</b>
                 {{#roles}}
-                    {{.}} {{#if @last}}&nbsp;{{else}},{{/if}}
+                    {{.}} {{#if @last}} {{else}},{{/if}}
                 {{/roles}}
                 </p>
             </div>
@@ -58,7 +58,7 @@
                 <p>
                     <b>Keywords:</b>
                 {{#keywords}}
-                    {{.}} {{#if @last}}&nbsp;{{else}},{{/if}}
+                    {{.}} {{#if @last}} {{else}},{{/if}}
                 {{/keywords}}
                 </p>
             </div>
@@ -85,11 +85,11 @@
             <p>
                 {{#if endDate}}
                 <b class="resume-work-title-class">
-                    <i>{{name}}&nbsp;-&nbsp;{{location}};&nbsp;({{startDate}}&nbsp;-&nbsp;{{endDate}})</i>
+                    <i>{{name}} - {{location}}; ({{startDate}} - {{endDate}})</i>
                 </b>
                 {{else}}
                 <b class="resume-work-title-class">
-                    <i>{{name}}&nbsp;-&nbsp;{{location}};&nbsp;({{startDate}}&nbsp;-&nbsp;Current)</i>
+                    <i>{{name}} - {{location}}; ({{startDate}} - Current)</i>
                 </b>
                 {{/if}}
             </p>
@@ -119,11 +119,11 @@
             <p>
                 {{#if endDate}}
                 <b class="resume-volunteer-title-class">
-                    <i>{{organization}}&nbsp;-&nbsp;{{location}};&nbsp;({{startDate}}&nbsp;-&nbsp;{{endDate}})</i>
+                    <i>{{organization}} - {{location}}; ({{startDate}} - {{endDate}})</i>
                 </b>
                 {{else}}
                 <b class="resume-volunteer-title-class">
-                    <i>{{organization}}&nbsp;-&nbsp;{{location}};&nbsp;({{startDate}}&nbsp;-&nbsp;Current)</i>
+                    <i>{{organization}} - {{location}}; ({{startDate}} - Current)</i>
                 </b>
                 {{/if}}
             </p>
@@ -151,12 +151,12 @@
         {{#skills}}
             {{#.}}
             <p>
-                <b><i>{{name}},&nbsp;{{level}}</i></b>
+                <b><i>{{name}}, {{level}}</i></b>
             </p>
             <div class="resume-skills-keywords-class">
                 <p>
                 {{#keywords}}
-                    {{.}} {{#if @last}}&nbsp;{{else}},{{/if}}
+                    {{.}} {{#if @last}} {{else}},{{/if}}
                 {{/keywords}}
                 </p>
             </div>
@@ -177,11 +177,11 @@
             <p>
                 {{#if endDate}}
                 <b>
-                    {{institution}}&nbsp;({{startDate}}&nbsp;-&nbsp;{{endDate}})
+                    {{institution}} ({{startDate}} - {{endDate}})
                 </b>
                 {{else}}
                 <b>
-                    {{institution}}&nbsp;({{startDate}}&nbsp;-&nbsp;Current)
+                    {{institution}} ({{startDate}} - Current)
                 </b>
                 {{/if}}
             </p>
